@@ -83,7 +83,7 @@ Com esse comando havera a criação da pasta no caso (filmes) e dentro dela ter�
 
 Rode o mesmo comando para criação das outras duas pastas.
 
-## Algumas Validações Importantes
+## Validações 
 
 Rode estes dois comandos:
 
@@ -148,7 +148,7 @@ npx prisma studio
 
 ## Rotas
 
-**Temos 3 rotas principais:**
+**3 rotas principais:**
 
 `/filmes.`
 
@@ -251,7 +251,7 @@ npx prisma studio
   }
 ```
 
-`@Get(':id')` **_cada rota principal tem o seu:_**
+`@Get(':id')` **cada rota principal tem o seu id**
 
 ```javascript
 @Get(':id')
@@ -289,12 +289,12 @@ npx prisma studio
 **`"generoid" neste campo sera feito a ligação do filme ao Genero que cadastramos logo acimma. Mas para isso devemos saber qual o ID do genero comedia e colocar neste campo generoid de filmes.`**
 
 ```javascript
-  "id": 1                          //Number
-  "nome": "Vovozona",              //String
-  "imagem": "teste.jpg",           //String?
-  "data_lancamento": "25/11/2006", //String
-  "tempo_duracao": 110,            //Number
-  "generoid": 1                    //Number
+  "id":                         //Number
+  "nome": "",                   //String
+  "imagem": "",                 //String?
+  "data_lancamento": "",        //String
+  "tempo_duracao": ,            //Number
+  "generoid":                   //Number
 ```
 
 **Post rota** `/participante , **no Thunder:**
@@ -302,14 +302,14 @@ npx prisma studio
 **`"filmeid" neste campo sera feito a ligação do participante ao Filme que cadastramos logo acimma. Mas para isso devemos saber qual o ID do Filme que criamos e colocar neste campo filmeid de participante.`**
 
 ```javascript
-  "nome": "Wiliam",                   //String
-  "imagem": "teste1.jpg",             //String?
-  "data_nascimento": "25/02/1980",    //String
-  "ator": "Pedro, Duda, Léo",         //String
-  "filmeid": 1                        //Int
+  "nome": "",                     //String
+  "imagem": "",                   //String?
+  "data_nascimento": "",          //String
+  "ator": "",                     //String
+  "filmeid":                      //Int
 ```
 
-- **Todos os `id` são autoincrement (criado sozinho, não precisa passar)**
+- **Todos os `id` são criados automaticamente atravez do autoincrement **
 
 ## Running the app
 
@@ -318,18 +318,4 @@ npx prisma studio
 $ npm run start:dev
 ```
 
-## Clonar repositório
 
-git clone https://github.com/wellingtonnascimentto/Projeto3_final_Mod3_backend
-
-## Autor
-
-**Wellington Nascimento**
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-##
-
-Nest is [MIT licensed](LICENSE).
