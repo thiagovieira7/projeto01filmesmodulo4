@@ -98,16 +98,15 @@ npm i --save helmet
 E faça as alterações necessarias para que seu codigo fique desta maneira:
 
 ```javascript
-import { ValidationPipe } from '@nestjs/common'; //Para o class-validator funcionar
+import { ValidationPipe } from '@nestjs/common'; //class-validator funcionar
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import * as helmet from 'helmet'; // Para o helmet funcionar
+
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe()); //Para funcionar o class-validator
-  app.use(helmet()); //Para funcionar o helmet
-  await app.listen(3000);
+ await app.listen(3000);
 }
 bootstrap();
 ```
@@ -148,7 +147,7 @@ npx prisma studio
 
 ## Rotas
 
-**3 rotas principais:**
+**rotas principais:**
 
 `/filmes.`
 
@@ -158,7 +157,7 @@ npx prisma studio
 
 **Dentro de cada rota temos um CRUD completo criado com os Decorator:**
 
-`@POst()` **Cada uma das rotas principais tem o seu:**
+`@POst()` **Cada rota tem um id:**
 
 ```javascript
 @Post()
@@ -182,7 +181,7 @@ npx prisma studio
   }
 ```
 
-`@Patch(':id') ` **Cada uma das rotas principais tem o seu:**
+`@Patch(':id') ` **Cada rota tem um id:**
 
 ```javascript
  @Patch(':id')
@@ -205,7 +204,7 @@ npx prisma studio
   }
 ```
 
-`@Delete`() **cada rota principal tem o seu:**
+`@Delete`() **Cada rota tem um id:**
 
 ```javascript
 @Delete(':id')
@@ -228,7 +227,7 @@ npx prisma studio
   }
 ```
 
-`@Get `() **_cada rota principal tem o seu:_**
+`@Get `() **Cada rota tem um id**
 
 ```javascript
 @Get()
@@ -251,7 +250,7 @@ npx prisma studio
   }
 ```
 
-`@Get(':id')` **cada rota principal tem o seu id**
+`@Get(':id')` **Cada rota tem um id**
 
 ```javascript
 @Get(':id')
@@ -274,7 +273,7 @@ npx prisma studio
      }
    ```
 
-**Post rota** `/genero` , **no Thunder:**
+**Post rota** `/genero` , ** Thunder:**
 
 - ​ **Usado para adicionar um genero de filmes no banco de dados local.**
 - ​ \*\*Para adicionar um genero dentro do banco, necessita passar todos os dados com suas devidas informações a seguir no exemplo:
@@ -284,7 +283,7 @@ npx prisma studio
 "nome": "comédia"   //String
 ```
 
-**Post rota** `/filmes` , **no Thunder:**
+**Post rota** `/filmes` , ** Thunder:**
 
 **`"generoid" neste campo sera feito a ligação do filme ao Genero que cadastramos logo acimma. Mas para isso devemos saber qual o ID do genero comedia e colocar neste campo generoid de filmes.`**
 
@@ -297,7 +296,7 @@ npx prisma studio
   "generoid":                   //Number
 ```
 
-**Post rota** `/participante , **no Thunder:**
+**Post rota** `/participante , ** Thunder:**
 
 **`"filmeid" neste campo sera feito a ligação do participante ao Filme que cadastramos logo acimma. Mas para isso devemos saber qual o ID do Filme que criamos e colocar neste campo filmeid de participante.`**
 
